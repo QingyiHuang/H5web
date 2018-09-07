@@ -1,0 +1,72 @@
+/*版心*/
+.jd_container{
+    /*保证宽度不溢出*/
+    min-width: 320px;
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+    background: forestgreen;
+    height: 1000px;
+}
+
+/*search 通栏限制在box内*/
+.jd_search_box{
+    position: fixed;/*固定*/
+    width: 100%;
+    left: 0;
+    top: 0;
+    background:rgba(200, 22, 11, 0.2);
+    margin: 0 auto;
+
+} 
+/*顶部搜索 圣杯布局 通栏*/
+.jd_search{
+    min-width: 320px;
+    max-width: 640px;
+    height: 40px;
+    background: rgba(201, 21, 35, 0.85);
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.jd_search .icon_logo{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 40px;
+}
+.jd_search .login{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+}
+.jd_search form{
+    width: 100%;
+    height: 40px;
+    padding-left: 60px;
+    padding-right: 50px;
+    position: relative;
+}
+.jd_search form .icon-search{
+    display: block;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 70px;
+    top:10px;
+    background: darkblue;
+}
+.jd_search form input{
+    padding-left: 40px;
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    border-radius: 15px;
+}

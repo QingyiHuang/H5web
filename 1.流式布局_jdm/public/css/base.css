@@ -1,0 +1,52 @@
+/** reset **/
+*,
+*::before,
+*::after{
+    /* 所有标签和伪元素 border-box*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*防止内容溢出*/
+    -webkit-box-sizing: border-box;/*borderbox的-webkit前缀*/
+    /*高亮效果清除--点的时候出现灰色块消除*/
+    /*轻击 轻轻触碰-webkit-tap-highlight-color*/
+    tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;/*透明*/
+}
+body{
+    font-size: 14px;
+    font-family: sans-serif,Arial, Helvetica;
+    color: #333;
+}
+ul ol{
+    list-style: none;
+}
+input textarea{
+    border: none;/*每个浏览器不一样*/
+    outline: none;
+    resize: none;  /*不允许拖拽文本框尺寸 */
+    /*去不干净，各个浏览器不一样，都会有自己的样式*/
+    
+    /*元素外观，none 就是没有任何样式*/
+    -webkit-appearance: none;/*新属性不需要去webkit*/
+}
+
+/* common css */
+.f_left{
+    float: left;
+}
+.f_right{
+    float: right;
+}
+/*清除浮动 common css*/
+.clearFix::before,
+.clearFix::after{
+    content: "";
+    display: block;/*  占位 */
+     visibility: hidden; /* 看不见 */
+    height: 0; /**/
+    line-height: 0; /**/
+    clear: both;
+}
+
+/*媒体查询*/
+/*圣杯布局 双飞翼布局 两边占位中间百分比*/
