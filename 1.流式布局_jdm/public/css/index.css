@@ -5,7 +5,6 @@
     max-width: 640px;
     width: 100%;
     margin: 0 auto;
-    background: forestgreen;
     height: 1000px;
 }
 
@@ -15,9 +14,8 @@
     width: 100%;
     left: 0;
     top: 0;
-    background:rgba(200, 22, 11, 0.2);
     margin: 0 auto;
-
+    z-index: 1000;
 } 
 /*顶部搜索 圣杯布局 通栏*/
 .jd_search{
@@ -32,10 +30,11 @@
 
 .jd_search .icon_logo{
     position: absolute;
-    left: 0;
+    left: 10px;
     top: 0;
     width: 60px;
-    height: 40px;
+    height: 40px;/* 图片由400px 400px缩小200px 200px  0 -220px-->  0 -110px*/
+    background-position: 0 -100px;
 }
 .jd_search .login{
     position: absolute;
@@ -50,18 +49,18 @@
 .jd_search form{
     width: 100%;
     height: 40px;
-    padding-left: 60px;
+    padding-left: 70px;
     padding-right: 50px;
     position: relative;
 }
-.jd_search form .icon-search{
+.jd_search form .icon_search{
     display: block;
     height: 20px;
     width: 20px;
     position: absolute;
-    left: 70px;
+    left: 80px;
     top:10px;
-    background: darkblue;
+    background-position: -60px -109px;
 }
 .jd_search form input{
     padding-left: 40px;
@@ -69,4 +68,207 @@
     height: 30px;
     margin-top: 5px;
     border-radius: 15px;
+}
+/*二倍图,*/
+
+[class*=' icon_'],[class^='icon_']{
+    background-repeat: no-repeat;
+    background-image: url('../img/sprites.png');
+    background-size: 200px 200px;
+}
+
+/**轮播图**/
+.jd_banner{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.jd_banner ul:first-child{
+    width: 1000%;/*十张图*/
+}
+.jd_banner ul:first-child li{
+    width: 10%;
+    float: left;
+}
+.jd_banner ul:first-child li a{
+    display: block;
+    width: 100%;
+}
+.jd_banner ul:first-child li a img{
+    display: block; /*去掉下间隙  font-size baseline img行级元素，与baseline对齐 有下空隙*/
+    /*解决方案*2 vertical-align -center or baseline*/
+    width: 100%;
+}
+/*point*/
+.jd_banner ul:last-child{
+    position: absolute;
+    left: 50%;
+    width: 118px;
+    height: 6px;
+    margin-left: -48px;
+    bottom: 6px;
+    transform: translateX(-10%);
+    -webkit-transform:translateX(-10%);
+}
+.jd_banner ul:last-child li{
+    border: 1px solid #fff;
+    border-radius: 3px;
+    width: 6px;
+    height: 6px;
+    float: left;
+    margin-left: 10px;
+}
+/*第一个li去掉margin*/
+.jd_banner ul:last-child li:first-child{
+    margin-left: 0;
+}
+.jd_banner ul:last-child li.now{
+    background: #fff;
+}
+
+/*导航栏*/
+.jd_nav{
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+.jd_nav ul{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.jd_nav ul li{
+    float: left;
+    width: 25%;
+}
+.jd_nav ul li a{
+    display: block;
+    width: 100%;
+}
+.jd_nav ul li a img{
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+}
+.jd_nav ul li a p{
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    padding: 5px 0;
+}
+/*产品区块*/
+.jd_product_box{
+    margin-top: 10px;
+    box-shadow: 0 0 2px #ccc;
+    background: #fff;
+}
+.jd_product_box .tit{
+    height: 34px;
+    box-shadow: 0 0 2px #ccc;
+    background: #fff;
+}
+.jd_product_box .tit.nb{
+    border-bottom: none;
+}
+.jd_product_box .tit h3{
+    font-weight: 14px;
+    position: relative;
+    padding-left: 23px;
+}
+.jd_product_box .tit h3::before{
+    content: "";
+    width: 3px;
+    height: 12px;
+    background: #d8505c;
+    position: absolute;
+    left: 10px;
+    top: 11px;
+}
+
+/*second kill*/
+.sk .icon{
+    width: 16px;
+    height: 20px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 7px;
+    background: url("../img/seckill-icon.png") no-repeat center/16px 20px;
+}
+.sk .name{
+    float: left;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #d8505c;
+    margin-top: 6px;
+}
+.sk .time{
+    float: left;
+    margin-left: 10px;
+}
+.sk .time span{
+    float: left;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    margin-left: 3px;
+    margin-top: 9px;
+}
+.sk .time span:nth-child(3n){
+    background: #fff;
+    width: 3px;
+    color: #333;
+}
+.sk .pro{
+    width: 100%;
+    padding: 10px 0;
+}
+.sk .pro li{
+    width: 33.33333%;
+    float: left;
+}
+.sk .pro li a{
+    display: block;
+    border-right: 1px solid #ddd;
+}
+.sk .pro li:last-child a{
+    border-right: none;
+}
+.sk .pro li a img{
+    display: block;
+    margin: 0 auto;
+    width: 64%;
+}
+.sk .pro li p{
+    text-align: center;
+    font-size: 12px;
+    padding: 5px 0;
+}
+.sk .pro li .nowPrice{
+    color: #d8505c;
+}
+.sk .pro li .oldPrice{
+    color: #666;
+    text-decoration: line-through;
+}
+
+/* 组合样式使用 */
+.w_50p{
+    width: 50%;
+}
+.w_50p img{
+    display: block;
+    width: 100%;
+}
+.bl{
+    border-left:1px solid #ddd;
+}
+.br{
+    border-right:1px solid #ddd;
+}
+.bb{
+    border-bottom:1px solid #ddd;
 }
