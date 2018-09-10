@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        height: 10px;
+        width: 20px;
+        background: red;
+        float: left;
+        position: absolute;
+    }
+    </style>
+</head>
+<body>
+    <!-- 触摸事件
+    touchstart -当手指触摸屏幕
+    touchmove  -当手指在屏幕中滑动的时候
+    touchend -手指离开屏幕触发
+    touchcancel -当滑动被迫终止滑动 -->
+
+    
+    <!-- e 就是touchEvent
+    事件对象，
+    touchList 触摸点，一个手指就是一个触摸点-集合
+    changedTouches 改变后的触摸点集合
+    targetTouches  当前元素触发点集合
+    touches 页面上所有出发点集合 -->
+
+    <!-- 每一个触摸点中都会记录当前触摸点的坐标 -->
+    e.touches
+    clientX /Y 基于视口
+    pageX/Y 基于页面 
+    screenX /Y 基于屏幕
+    <div class="box"></div>
+    <script>
+    window.onload=function(){
+        var box = document.querySelector('.box')
+        box.addEventListener('touchstart',function(e){
+            console.log('touchstart')
+            
+        })
+        box.addEventListener('touchmove',function(e){
+            console.log('touchmove')
+            box.style.left = e.touches[0].clientX
+            box.style.top = e.touches[0].clientY
+        })
+        box.addEventListener('touchend',function(e){
+            console.log('touchend')
+        })
+    }
+    </script>
+</body>
+</html>
